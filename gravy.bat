@@ -23,7 +23,7 @@ goto fail
 :use
     if [%2]==[] echo ERROR: No version specified & goto fail
     setlocal enabledelayedexpansion
-    set NEW_GRAILS_HOME=%GRAILS_ROOT%\%2
+    set NEW_GRAILS_HOME=%GRAILS_ROOT%\grails-%2
     if not exist "!NEW_GRAILS_HOME!\bin\grails" echo ERROR: No installation for version (%2) found & goto fail
     if defined GRAILS_HOME (
         set NEW_PATH=!PATH:%GRAILS_HOME%=%NEW_GRAILS_HOME%!
